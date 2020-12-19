@@ -235,9 +235,10 @@ void usercontrol(void) {
 
 int main() {
   pre_auton();
-  competition().autonomous(autonomous); //runs autonomus in a competition
-  //autonomous();                         //runs autonomus when the program is ran
+  competition().autonomous(autonomous); //runs autonomous in a competition
+  //autonomous();                         //runs autonomous when the program is ran
   competition().drivercontrol(usercontrol);
   usercontrol();
+  
 }
 
