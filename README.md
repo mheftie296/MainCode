@@ -3,7 +3,7 @@ Main Vex code for 6813C Turning Point
 
 For autonomous, 
 driveSmooth(distance) will drive about the requested distance in inches, and turnSmooth(degrees) will turn the requested distance in degrees.
-There are values at the top of the code to change the acceleration speed and the speed the robot starts and ends the movemants at for both rotation and driving.
+There are values at the top of the code to change the acceleration speed and the speed the robot starts and ends the movements at for both rotation and driving.
 
 if the robot is not behaving as expected during autonomous, there is commented out print statements inside driveSmooth and turnSmooth that will print to the console in vexcode if the controller is connected to the computer when autonomous is running.
 
