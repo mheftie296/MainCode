@@ -35,6 +35,15 @@
 // turn left = 10    can be any number, but I use 10. this might change
 bool shouldRollersSpin = false;
 bool shouldIntakeSpin = false;
+
+//turning
+float accR = 5; //acceleration value for rotation, does not correlate to a known acceleration amount (like inches/second squared)
+float cutoffR = 10;  //the value that the motors start and end the move at for rotation, should not change distance driven. must be higher than 0
+
+//driving straight
+float acc = 20; //acceleration value, does not correlate to a known acceleration amount (like inches/second squared)
+float cutoff = 5; //the value that the motors start and end the move at, should not change distance driven. must be higher than 0
+
 using namespace vex;
 void pre_auton(void) {
   vexcodeInit();
@@ -84,8 +93,7 @@ void stopMotors(){                   //stops the motors, used in auton
   backRightMotor.setVelocity(0,percent);
 }
 
-float accR = 5; //acceleration value, does not correlate to a known acceleration amount (like inches/second squared)
-float cutoffR = 10;  //the value that the motors start and end the move at, should not change distance driven. must be higher than 0!
+
 void turnSmooth(int distance){ //turns the specified rotation in degrees
   resetMotorPositions();
   float startR = getAvMotorPos(9);
@@ -126,8 +134,7 @@ void turnSmooth(int distance){ //turns the specified rotation in degrees
   }
   stopMotors();
 }
-float acc = 20; //acceleration value, does not correlate to a known acceleration amount (like inches/second squared)
-float cutoff = 5; //the value that the motors start and end the move at, should not change distance driven. must be higher than 0!
+
 void driveSmooth(int distance, int direction){ //drives the specified amount in inches
   resetMotorPositions();
   float start = getAvMotorPos(direction);
